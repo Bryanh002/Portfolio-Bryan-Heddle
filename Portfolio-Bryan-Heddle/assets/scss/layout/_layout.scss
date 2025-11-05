@@ -1,0 +1,91 @@
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container{
+   max-width: 1120px;
+   margin-inline: 1.5rem;
+}
+
+.grid{
+   display: grid;
+   gap: 1.5rem;
+}
+
+.section{
+   padding-block: 5rem 1rem;
+
+   &__title{
+      text-align: center;
+      font-size: var(--h1-font-size);
+      margin-bottom: 3rem;
+
+      & span{
+         color: var(--first-color);
+      }
+   }
+}
+
+.main{
+   overflow: hidden;
+}
+
+/*=============== BLOB ===============*/
+/* Blob animate */
+.blob-animate{
+   width: 100px;
+   height: 100px;
+   background: linear-gradient(180deg, 
+               var(--first-color-alt) 20%, 
+               var(--first-color-light) 100%);
+   border-radius: 50%;
+   position: absolute;
+   filter: blur(35px);
+   z-index: -1;
+   animation: animateBlob 5s linear infinite;
+}
+
+@keyframes animateBlob{
+   0%{
+      transform: rotate(0);
+   }
+   100%{
+      transform: rotate(360deg);
+   }
+}
+
+/* Blob */
+.blob{
+   width: 250px;
+   height: 250px;
+   background: linear-gradient(180deg, 
+               var(--first-color) 0%, 
+               var(--first-color-alt) 100%);
+   border-radius: 50%;
+   filter: blur(50px);
+   position: absolute;
+   z-index: -1;
+}
+
+/*=============== CUSTOM CURSOR ===============*/
+.cursor{
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 9999;
+   width: 50px;
+   height: 50px;
+   background-color: var(--first-color-light);
+   border-radius: 50%;
+   box-shadow: 0 0 30px var(--first-color);
+   mix-blend-mode: difference;
+   pointer-events: none;
+   transition: transform .2s ease-out, 
+               left .2s ease-out, 
+               top .2s ease-out, 
+               width .3s, 
+               height .3s;
+}
+
+/* Hide the custom cursor */
+.hide-cursor{
+   width: 0;
+   height: 0;
+}

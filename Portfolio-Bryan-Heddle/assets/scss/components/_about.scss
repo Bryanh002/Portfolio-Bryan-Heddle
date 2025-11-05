@@ -1,0 +1,48 @@
+/*=============== ABOUT ===============*/
+.about{
+   position: relative;
+
+   &__container{
+      row-gap: 3rem;
+      overflow-y: clip;
+   }
+   &__data .section__title{
+      margin-bottom: 1.5rem;
+      text-align: initial;
+   }
+   &__description{
+      font-size: var(--h2-font-size);
+      margin-bottom: 2rem;
+
+      & b{
+         color: var(--first-color);
+         font-weight: var(--font-semi-bold);
+      }
+   }
+   &__image{
+      position: relative;
+      justify-self: center;
+
+      & .blob-animate:nth-child(1){
+         top: 1.5rem;
+         left: 1rem;
+      }
+      & .blob-animate:nth-child(2){
+         right: -.5rem;
+         bottom: .5rem;
+      }
+   }
+   &__perfil{
+      width: 220px;
+   }
+   &__shadow{
+      width: 100%;
+      height: 258px;
+      position: absolute;
+      bottom: 1rem;
+      z-index: 1;
+      background: linear-gradient(180deg, 
+                hsla(240, 100%, 2%, 0) 60%, 
+                var(--body-color) 95%);
+   }
+}

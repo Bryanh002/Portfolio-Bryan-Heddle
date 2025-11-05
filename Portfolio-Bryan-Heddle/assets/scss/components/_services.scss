@@ -1,0 +1,91 @@
+/*=============== SERVICES ===============*/
+.services{
+   &__container{
+      row-gap: 2rem;
+   }
+   &__card{
+      position: relative;
+      background-color: var(--container-color);
+      padding: 2rem 1.5rem;
+      border-radius: 3rem;
+      display: grid;
+      row-gap: 1.5rem;
+      overflow: hidden;
+
+      & .blob{
+         z-index: 0;
+         top: -7.75rem;
+         left: -7.75rem;
+      }
+      & .blob-2{
+         left: initial;
+         right: -7.75rem;
+      }
+   }
+   &__data,
+   &__info{
+      position: relative;
+      z-index: 1;
+   }
+   &__title{
+      font-size: var(--h2-font-size);
+      margin-bottom: .5rem;
+   }
+   &__subtitle{
+      font-size: var(--small-font-size);
+      font-weight: var(--font-regular);
+      color: var(--text-color);
+      margin-bottom: .5rem;
+   }
+   &__skills{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .5rem .25rem;
+   }
+   &__skill{
+      background-color: var(--container-color);
+      color: var(--title-color);
+      border: 1px solid var(--title-color);
+      padding: 4px 10px;
+      border-radius: 4rem;
+      font-size: var(--smaller-font-size);
+      font-family: var(--second-font);
+   }
+   &__button{
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      background-color: var(--body-color);
+      border: 2px solid var(--first-color);
+      color: var(--title-color);
+      border-radius: .5rem;
+      font-size: 1.5rem;
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 2;
+      cursor: pointer;
+      
+      & i{
+         transition: rotate .4s;
+      }
+   }
+}
+
+/* Hide services info */
+.services-close .services__info{
+   height: 0;
+   opacity: 0;
+   overflow: hidden;
+}
+
+.services__info{
+   transition: height .4s, opacity .4s;
+}
+
+/* Rotate icon */
+.services-open .services__button i{
+   rotate: -180deg;
+}

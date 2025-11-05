@@ -1,0 +1,98 @@
+/*=============== PROJECTS ===============*/
+.projects{
+   & .section__title{
+      text-align: initial;
+      margin-left: 1.5rem;
+   }
+   &__card{
+      position: relative;
+      background-color: var(--container-color);
+      padding: 1.5rem;
+      border-radius: 3rem;
+      overflow: hidden;
+
+      & .blob{
+         z-index: 0;
+         right: -7.75rem;
+         bottom: 0;
+      }
+   }
+   &__number,
+   &__data,
+   &__image{
+      position: relative;
+      z-index: 1;
+   }
+   &__number{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & h1{
+         font-size: var(--biggest-font-size);
+      }
+      & h3{
+         font-weight: var(--font-regular);
+         font-size: var(--h3-font-size);
+      }
+   }
+   &__data{
+      margin-block: 2rem;
+   }
+   &__title{
+      font-size: var(--h2-font-size);
+      margin-bottom: 1rem;
+   }
+   &__subtitle{
+      font-family: var(--second-font);
+      font-size: var(--small-font-size);
+      margin-bottom: .5rem;
+   }
+   &__description{
+      font-size: var(--small-font-size);
+   }
+   &__img{
+      border-radius: 1.5rem;
+   }
+   &__button{
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      background-color: var(--body-color);
+      border: 3px solid var(--first-color);
+      border-radius: 50%;
+      color: var(--title-color);
+      font-size: 2rem;
+      position: absolute;
+      top: .75rem;
+      right: .75rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: box-shadow .4s, opacity .4s;
+
+      &:hover{
+         box-shadow: 0 0 24px var(--first-color);
+      }
+   }
+   &__image:hover &__button{
+      opacity: 1;
+      pointer-events: initial;
+   }
+}
+
+/* Swiper class */
+.projects__swiper{
+   margin-inline: initial;
+   padding-bottom: 2rem;
+}
+
+.projects{
+   & .swiper-pagination-bullets{
+      bottom: 0;
+   }
+   & .swiper-pagination-bullet{
+      background-color: var(--first-color);
+      transition: opacity .4s;
+   }
+}

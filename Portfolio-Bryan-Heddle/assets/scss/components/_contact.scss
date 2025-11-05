@@ -1,0 +1,64 @@
+/*=============== CONTACT ===============*/
+.contact{
+   &__container{
+      row-gap: 4rem;
+      padding-bottom: 2rem;
+   }
+   & .section__title{
+      margin-bottom: 1rem;
+   }
+   &__data{
+      text-align: center;
+   }
+   &__description{
+      font-family: var(--second-font);
+      margin-bottom: 1.5rem;
+   }
+   &__email{
+      display: none;
+   }
+   &__button{
+      cursor: pointer;
+   }
+   &__content{
+      row-gap: 3rem;
+   }
+   &__info{
+      row-gap: 1rem;
+   }
+   &__title{
+      font-size: var(--h3-font-size);
+      color: var(--first-color);
+      text-align: center;
+      margin-bottom: .5rem;
+   }
+   &__address{
+      color: var(--title-color);
+      font-style: normal;
+      font-weight: var(--font-medium);
+      text-align: center;
+   }
+   &__links{
+      display: grid;
+      grid-template-columns: max-content;
+      justify-content: center;
+      row-gap: .25rem;
+   }
+   &__link{
+      color: var(--title-color);
+      font-weight: var(--font-medium);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: .5rem;
+      transition: transform .4s, color .4s;
+
+      & i{
+         font-size: 1.5rem;
+      }
+      &:hover{
+         transform: translateX(.35rem);
+         color: var(--text-color);
+      }
+   }
+}

@@ -1,0 +1,86 @@
+/*=============== TESTIMONIALS ===============*/
+.testimonials{
+   & .section__title{
+      text-align: initial;
+      margin-left: 1.5rem;
+   }
+   &__container{
+      position: relative;
+      margin-inline: 0;
+      overflow: hidden;
+   }
+   &__card{
+      position: relative;
+      width: 320px;
+      background-color: var(--container-color);
+      padding: 1.5rem 1rem 2.5rem;
+      margin-inline: 1rem;
+      border-radius: 3rem;
+      text-align: center;
+      overflow: hidden;
+
+      & .blob{
+         z-index: 0;
+         left: 0;
+         right: 0;
+         margin-inline: auto;
+         bottom: -12.5rem;
+      }
+   }
+   &__data{
+      position: relative;
+      z-index: 1;
+   }
+   &__img{
+      width: 60px;
+      border-radius: 50%;
+      margin: 0 auto .5rem;
+   }
+   &__name{
+      font-size: var(--normal-font-size);
+      font-weight: var(--font-regular);
+      margin-bottom: 1.5rem;
+   }
+   &__rating{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: .5rem;
+      margin-bottom: .5rem;
+   }
+   &__stars{
+      display: flex;
+      column-gap: .25rem;
+
+      & i{
+         font-size: 1rem;
+         color: var(--title-color);
+      }
+   }
+   &__number{
+      font-size: var(--h3-font-size);
+   }
+   &__content{
+      display: flex;
+      width: max-content;
+      animation: scroll 18s linear infinite;
+   }
+   &__reverse{
+      flex-direction: row-reverse;
+      animation-direction: reverse;
+      animation-delay: -1s;
+   }
+    &__content:hover{
+      animation-play-state: paused;
+   }
+}
+
+/* Infinite scroll animation */
+@keyframes scroll{
+   0%{
+      transform: translateX(0);
+   }
+   100%{
+      transform: translateX(-50%);
+   }
+}
