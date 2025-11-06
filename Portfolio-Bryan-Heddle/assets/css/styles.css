@@ -534,6 +534,7 @@ img {
 
 .projects__data {
   margin-block: 2rem;
+  min-height: 150px;
 }
 
 .projects__title {
@@ -553,6 +554,9 @@ img {
 
 .projects__img {
   border-radius: 1.5rem;
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .projects__button {
@@ -1008,7 +1012,7 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 300px) {
   .container {
     margin-inline: 1rem;
   }
@@ -1017,6 +1021,16 @@ img {
   .home__image .blob-animate {
     width: 220px;
     height: 220px;
+  }
+
+  .about__image .blob-animate:nth-child(1) {
+    scale: 1.2;
+    top: 2rem;
+    left: 4.8rem;
+  }
+
+  .about__image .blob-animate:nth-child(2) {
+    display: none;
   }
 
   .projects__card {
