@@ -1,202 +1,310 @@
-/*=============== HOME SPLIT TEXT ===============*/
-const{ animate, stagger, text } = anime
- 
-const { chars: chars1 } = text.split('.home__profession-1', { chars: true })
-const { chars: chars2 } = text.split('.home__profession-2', { chars: true })
-
-animate(chars1, {
-   y: [
-      { to: ['100%', '0%'] },
-      { to: '-100%', delay: 4000, ease: 'in(3)'}
-   ],
-   duration: 900,
-   ease: 'out(3)',
-   delay: stagger(80),
-   loop: true,
-})
-
-animate(chars2, {
-   y: [
-      { to: ['100%', '0%'] },
-      { to: '-100%', delay: 4000, ease: 'in(3)'}
-   ],
-   duration: 900,
-   ease: 'out(3)',
-   delay: stagger(80),
-   loop: true,
-})
-
-/*=============== SWIPER PROJECTS ===============*/
-const swiperProjects = new Swiper('.projects__swiper', {
-   loop: true,
-   spaceBetween: 24,
-   slidesPerView: 'auto',
-   grabCursor: true,
-   speed: 600,
-
-   pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-   },
-
-   autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-   },
-})
-
-/*=============== WORK TABS ===============*/
-const tabs = document.querySelectorAll('[data-target]'),
-      tabContents = document.querySelectorAll('[data-content]')
-
-tabs.forEach((tab) => {
-   tab.addEventListener('click', () => {
-      const targetSelector = tab.dataset.target,
-            targetContent = document.querySelector(targetSelector)
-
-      // Disable all content and active tabs
-      tabContents.forEach((content) => content.classList.remove('work-active'))
-      tabs.forEach((t) => t.classList.remove('work-active'))
-
-      // Activate the tab and corresponding content
-      tab.classList.add('work-active')
-      targetContent.classList.add('work-active')
-   })
-})
-
-/*=============== SERVICES ACCORDION ===============*/
-const servicesButtons = document.querySelectorAll('.services__button')
-
-servicesButtons.forEach(button => {
-   // Add your height to services info
-   const heightInfo = document.querySelector('.services__info')
-         heightInfo.style.height = heightInfo.scrollHeight + 'px'
-
-   button.addEventListener('click', () => {
-      const servicesCards = document.querySelectorAll('.services__card'),
-            currentCard = button.parentNode,
-            currentInfo = currentCard.querySelector('.services__info'),
-            isCardOpen = currentCard.classList.contains('services-open')
-
-      // Close all other services info
-      servicesCards.forEach(card => {
-         card.classList.replace('services-open', 'services-close')
-
-         const info = card.querySelector('.services__info')
-               info.style.height = '0'
-      })
-
-      // Open only if not already open
-      if(!isCardOpen){
-         currentCard.classList.replace('services-close', 'services-open')
-         currentInfo.style.height = currentInfo.scrollHeight + 'px'
-      }
-   })
-})
-
-/*=============== TESTIMONIALS OF DUPLICATE CARDS ===============*/
-// Duplicate images to make the animation work
-const tracks = document.querySelectorAll('.testimonials__content');
-
-tracks.forEach(track => {
-   const cards = [...track.children]; // spread to make a static copy
-
-   // Duplicate cards only once
-   for (const card of cards) {
-      track.appendChild(card.cloneNode(true));
-   }
-})
-
-/*=============== COPY EMAIL IN CONTACT ===============*/
-const copyBtn = document.getElementById('contact-btn'),
-      copyEmail = document.getElementById('contact-email').textContent
-
-copyBtn.addEventListener('click', () => {
-   // Use the clipboard API to copy text
-   navigator.clipboard.writeText(copyEmail).then(() => {
-      copyBtn.innerHTML = 'Email copied <i class="ri-check-line"></i>'
-
-      // Restore the original text
-      setTimeout(() => {
-         copyBtn.innerHTML = 'Copy email <i class="ri-file-copy-line"></i>'
-      }, 2000)
-   })
-})
-
-/*=============== CURRENT YEAR OF THE FOOTER ===============*/ 
-const textYear = document.getElementById('footer-year'), 
-      currentYear = new Date().getFullYear()
-
-// Each year it is updated to the current year
-textYear.textContent = currentYear
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const header = document.getElementById('header')
+const nav = document.querySelector('.nav')
+const toggle = document.getElementById('nav-toggle')
+const menu = document.getElementById('nav-menu')
+const year = document.getElementById('footer-year')
+const copyBtn = document.getElementById('contact-btn')
+const email = document.getElementById('contact-email').textContent.trim()
 const sections = document.querySelectorAll('section[id]')
+const navLinks = document.querySelectorAll('.nav__link')
 
-const scrollActive = () => {
-   // We get the position by scrolling down
-   const scrollY = window.scrollY
+year.textContent = new Date().getFullYear()
 
-   sections.forEach(section => {
-      const id = section.id, // id of each section
-            top = section.offsetTop - 50, // Distance from the top edge
-            height = section.offsetHeight, // Element height
-            link = document.querySelector('.nav__menu a[href*=' + id + ']') // id nav link
-
-      if(!link) return
-
-      link.classList.toggle('active-link', scrollY > top && scrollY <= top + height)
-   })
-}
-window.addEventListener('scroll', scrollActive)
-
-/*=============== CUSTOM CURSOR ===============*/
-const cursor = document.querySelector('.cursor')
-let mouseX = 0, mouseY = 0 // Store mouse position
-
-const cursorMove = () => {
-   // Position the cursor
-   cursor.style.left = `${mouseX}px`
-   cursor.style.top = `${mouseY}px`
-   cursor.style.transform = 'translate(-50%, -50%)'
-
-   // Update the cursor animation
-   requestAnimationFrame(cursorMove)
+const closeMenu = () => {
+  nav.classList.remove('is-open')
+  toggle.setAttribute('aria-expanded', 'false')
 }
 
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX
-  mouseY = e.clientY
+toggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('is-open')
+  toggle.setAttribute('aria-expanded', String(open))
 })
 
-cursorMove()
-
-/* Hide custom cursor on links */
-const a = document.querySelectorAll('a');
-
-a.forEach(item => {
-   item.addEventListener('mouseover', () => {
-      cursor.classList.add('hide-cursor');
-   })
-   item.addEventListener('mouseleave', () => {
-      cursor.classList.remove('hide-cursor');
-   })
+menu.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', closeMenu)
 })
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-   origin: 'top',
-   distance: '60px',
-   duration: 2000,
-   delay: 300,
-   // reset: true, // Animations repeat
+window.addEventListener('scroll', () => {
+  header.classList.toggle('is-scrolled', window.scrollY > 8)
+}, { passive: true })
+
+const setActiveLink = () => {
+  const y = window.scrollY + 120
+
+  sections.forEach((section) => {
+    const top = section.offsetTop
+    const bottom = top + section.offsetHeight
+    const id = section.id
+    const link = document.querySelector(`.nav__link[href="#${id}"]`)
+
+    if (!link) return
+    link.classList.toggle('active-link', y >= top && y < bottom)
+  })
+}
+
+window.addEventListener('scroll', setActiveLink, { passive: true })
+setActiveLink()
+
+const story = [
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'contact', label: 'Contact' },
+]
+
+const guide = document.getElementById('guide')
+const guideKicker = document.getElementById('guide-kicker')
+const guideTarget = document.getElementById('guide-target')
+const guideIcon = guide.querySelector('i')
+
+const updateGuide = () => {
+  const y = window.scrollY + window.innerHeight * 0.42
+  let next = story[0]
+
+  for (let i = 0; i < story.length; i += 1) {
+    const section = document.getElementById(story[i].id)
+    if (!section) continue
+    if (y >= section.offsetTop) next = story[i + 1] || null
+  }
+
+  if (!next) {
+    guide.href = '#top'
+    guideKicker.textContent = 'Back'
+    guideTarget.textContent = 'Top'
+    guideIcon.className = 'ri-arrow-up-line'
+    return
+  }
+
+  guide.href = `#${next.id}`
+  guideKicker.textContent = 'Next'
+  guideTarget.textContent = next.label
+  guideIcon.className = 'ri-arrow-down-line'
+}
+
+window.addEventListener('scroll', updateGuide, { passive: true })
+updateGuide()
+
+copyBtn.addEventListener('click', async () => {
+  const original = 'Copy email <i class="ri-file-copy-line" aria-hidden="true"></i>'
+  const copied = 'Email copied <i class="ri-check-line" aria-hidden="true"></i>'
+
+  const reset = () => {
+    setTimeout(() => {
+      copyBtn.innerHTML = original
+    }, 2000)
+  }
+
+  try {
+    await navigator.clipboard.writeText(email)
+    copyBtn.innerHTML = copied
+    reset()
+    return
+  } catch {
+    // Clipboard API can fail in some embedded browsers; fall back below.
+  }
+
+  const field = document.createElement('textarea')
+  field.value = email
+  field.setAttribute('readonly', '')
+  field.style.position = 'fixed'
+  field.style.left = '-9999px'
+  document.body.appendChild(field)
+  field.select()
+
+  let ok = false
+  try {
+    ok = document.execCommand('copy')
+  } catch {
+    ok = false
+  }
+
+  field.remove()
+  copyBtn.innerHTML = ok ? copied : email
+  reset()
 })
 
-sr.reveal(`.home__image, .projects__container, .work__container, 
-           .testimonials__container, .contact__container`)
-sr.reveal(`.home__data`, {delay: 900, origin: 'bottom'})
-sr.reveal(`.home__info`, {delay: 1200, origin: 'bottom'})
-sr.reveal(`.home__social, .home__cv`, {delay: 1500})
-sr.reveal(`.about__data`, {origin: 'left'})
-sr.reveal(`.about__image`, {origin: 'right'})
-sr.reveal(`.services__card`, {interval: 100})
+const initOrbitViewer = ({ viewerId, imgId, cols, rows, frameBase, frameExt, col = 0, row = 0 }) => {
+  const viewer = document.getElementById(viewerId)
+  const img = document.getElementById(imgId)
+  if (!viewer || !img) return
+
+  const COLS = cols
+  const ROWS = rows
+  const pixelsPerCol = 16
+  const pixelsPerRow = 32
+  const PRELOAD_BATCH = 32
+
+  let dragging = false
+  let lastX = 0
+  let lastY = 0
+  let dragX = 0
+  let dragY = 0
+  let renderQueued = false
+  let ready = false
+  const frameCache = new Map()
+
+  const framePath = (rowIndex, colIndex) => {
+    const r = Math.min(Math.max(rowIndex, 0), ROWS - 1)
+    const c = ((colIndex % COLS) + COLS) % COLS
+    const frameNumber = r * COLS + c + 1
+    return `${frameBase}${String(frameNumber).padStart(6, '0')}${frameExt}`
+  }
+
+  const loadFrame = (src) => {
+    const cached = frameCache.get(src)
+    if (cached instanceof HTMLImageElement) return Promise.resolve(cached)
+    if (cached && cached.then) return cached
+
+    const promise = new Promise((resolve, reject) => {
+      const image = new Image()
+      image.decoding = 'async'
+      image.onload = () => {
+        if (image.decode) {
+          image.decode().then(() => resolve(image)).catch(() => resolve(image))
+        } else {
+          resolve(image)
+        }
+      }
+      image.onerror = reject
+      image.src = src
+    }).then((image) => {
+      if (image) frameCache.set(src, image)
+      return image
+    }).catch(() => null)
+
+    frameCache.set(src, promise)
+    return promise
+  }
+
+  const preloadFrames = async (paths) => {
+    for (let i = 0; i < paths.length; i += PRELOAD_BATCH) {
+      await Promise.all(paths.slice(i, i + PRELOAD_BATCH).map((path) => loadFrame(path)))
+    }
+  }
+
+  const renderFrame = () => {
+    renderQueued = false
+    const src = framePath(row, col)
+    const cached = frameCache.get(src)
+
+    if (cached instanceof HTMLImageElement) {
+      img.src = cached.src
+      return
+    }
+
+    const pending = cached && cached.then ? cached : loadFrame(src)
+    pending.then((image) => {
+      if (image && framePath(row, col) === src) img.src = image.src
+    })
+  }
+
+  const queueRender = () => {
+    if (renderQueued) return
+    renderQueued = true
+    requestAnimationFrame(renderFrame)
+  }
+
+  const applyDragDelta = (deltaX, deltaY) => {
+    dragX += deltaX
+    dragY += deltaY
+    let nextCol = col
+    let nextRow = row
+
+    while (Math.abs(dragX) >= pixelsPerCol) {
+      nextCol += dragX > 0 ? 1 : -1
+      dragX += dragX > 0 ? -pixelsPerCol : pixelsPerCol
+    }
+
+    while (Math.abs(dragY) >= pixelsPerRow) {
+      const direction = dragY > 0 ? 1 : -1
+      if ((direction > 0 && nextRow >= ROWS - 1) || (direction < 0 && nextRow <= 0)) {
+        dragY = 0
+        break
+      }
+      nextRow += direction
+      dragY += direction > 0 ? -pixelsPerRow : pixelsPerRow
+    }
+
+    if (nextCol === col && nextRow === row) return
+    col = ((nextCol % COLS) + COLS) % COLS
+    row = Math.min(Math.max(nextRow, 0), ROWS - 1)
+    queueRender()
+  }
+
+  const startDrag = (clientX, clientY) => {
+    if (!ready) return
+    dragging = true
+    lastX = clientX
+    lastY = clientY
+    dragX = 0
+    dragY = 0
+    viewer.classList.add('is-dragging')
+  }
+
+  const endDrag = () => {
+    dragging = false
+    viewer.classList.remove('is-dragging')
+  }
+
+  const moveDrag = (clientX, clientY) => {
+    if (!dragging) return
+    const deltaX = clientX - lastX
+    const deltaY = clientY - lastY
+    lastX = clientX
+    lastY = clientY
+    applyDragDelta(deltaX, deltaY)
+  }
+
+  viewer.addEventListener('mousedown', (event) => {
+    event.preventDefault()
+    startDrag(event.clientX, event.clientY)
+  })
+  window.addEventListener('mouseup', endDrag)
+  window.addEventListener('mousemove', (event) => moveDrag(event.clientX, event.clientY))
+
+  viewer.addEventListener('touchstart', (event) => {
+    if (event.touches.length !== 1) return
+    startDrag(event.touches[0].clientX, event.touches[0].clientY)
+  }, { passive: true })
+  viewer.addEventListener('touchmove', (event) => {
+    if (event.touches.length !== 1) return
+    moveDrag(event.touches[0].clientX, event.touches[0].clientY)
+  }, { passive: true })
+  viewer.addEventListener('touchend', endDrag)
+  viewer.addEventListener('touchcancel', endDrag)
+
+  viewer.classList.add('is-loading')
+  const currentRowPaths = Array.from({ length: COLS }, (_, c) => framePath(row, c))
+  preloadFrames(currentRowPaths).then(() => {
+    ready = true
+    renderFrame()
+    viewer.classList.remove('is-loading')
+    const allPaths = []
+    for (let r = 0; r < ROWS; r += 1) {
+      for (let c = 0; c < COLS; c += 1) allPaths.push(framePath(r, c))
+    }
+    preloadFrames(allPaths)
+  })
+}
+
+initOrbitViewer({
+  viewerId: 'ergos-viewer',
+  imgId: 'ergos-orbit',
+  cols: 30,
+  rows: 10,
+  frameBase: 'assets/img/ergos-orbit/Frame',
+  frameExt: '.webp',
+  col: 0,
+  row: 0,
+})
+
+initOrbitViewer({
+  viewerId: 'rover-viewer',
+  imgId: 'rover-orbit',
+  cols: 36,
+  rows: 12,
+  frameBase: 'assets/img/rover-orbit/Frame',
+  frameExt: '.webp',
+  col: 5,
+  row: 0,
+})

@@ -1,792 +1,388 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bryan Heddle, mechatronics and AI systems engineer. Robotics, computer vision, and embedded systems.">
+    <meta name="author" content="Bryan Heddle">
+    <meta property="og:title" content="Bryan Heddle">
+    <meta property="og:description" content="Mechatronics and AI systems engineer building robots, firmware, and vision systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bryanheddle.com">
+    <meta name="theme-color" content="#0a0b0d">
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <title>Bryan Heddle</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-      <!--=============== SWIPER CSS ===============-->
-      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <header class="header" id="header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__logo" href="#top">Bryan Heddle</a>
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+        <button class="nav__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__toggle-bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
 
-      <title>Portfolio Website</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <div class="blob-animate"></div>
-         
-         <nav class="nav container">
-            <a href="#" class="nav__logo">Bryan</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#projects">Projects</a></li>
+            <li><a class="nav__link" href="#experience">Experience</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+          <a class="nav__resume" href="assets/pdf/Bryan_Heddle_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </nav>
+    </header>
 
-            <div class="nav__menu">
-               <ul class="nav__list">
-                  <li>
-                     <a href="#about" class="nav__link">About Me</a>
-                  </li>
+    <main class="main" id="main">
+      <section class="hero" id="top">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">Mechatronics · AI Systems · Western</p>
+          <h1 class="hero__title">Bryan Heddle</h1>
+          <p class="hero__lede">
+            I love to build.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">See projects</a>
+            <a class="btn btn--ghost" href="assets/pdf/Bryan_Heddle_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a class="btn btn--ghost" href="https://github.com/Bryanh002" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
 
-                  <li>
-                     <a href="#projects" class="nav__link">Projects</a>
-                  </li>
+        <div class="hero__visual">
+          <div class="hero__stage">
+            <img src="assets/img/humanoid.png" alt="Render of the ERGOS humanoid robot" class="hero__image">
+            <span class="hero__visor" aria-hidden="true"></span>
+            <span class="hero__scan" aria-hidden="true"></span>
+          </div>
+        </div>
+      </section>
 
-                  <li>
-                     <a href="#contact" class="nav__link">Contact</a>
-                  </li>
-               </ul>
+      <section class="about" id="about">
+        <div class="about__grid">
+          <p class="about__text">
+            Fourth-year <b>Mechatronics with AI Systems Engineering</b> at the University of Western Ontario.
+            I care about the full stack of a machine: mechanics, boards, firmware, and the models that run on it.
+            Currently building the <b>ERGOS</b> humanoid and leading Western’s Mars rover team.
+            I love reaching outside my boundaries and pushing myself to learn more.
+          </p>
+          <dl class="about__facts">
+            <div>
+              <dt>Education</dt>
+              <dd>Western · B.E. 2027</dd>
             </div>
-         </nav>
-      </header>
-
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!-- CUSTOM CURSOR -->
-         <div class="cursor"></div>
-
-         <!--==================== HOME ====================-->
-         <section class="home section">
-            <div class="home__shadow"></div>
-            
-            <div class="home__container container grid">
-               <div class="home__data">
-                  <h3 class="home__greeting">Hello, I'm</h3>
-                  <h1 class="home__name">Bryan <br> Heddle</h1>
-               </div>
-
-               <div class="home__image">
-                  <div class="blob-animate"></div>
-                  <img src="assets/img/humanoid.png" alt="image" class="home__perfil">
-               </div>
-
-               <div class="home__info">
-                  <h3 class="home__split">Creative</h3>
-                  <!-- Insert profession, short text -->
-                  <h2 class="home__profession-1">Developer</h2>
-                  <h2 class="home__profession-2">& Engineer</h2>
-               </div>
-
-               <div class="home__social">
-                  <a href="https://www.linkedin.com/in/bryan-heddle-4a55361ba/" target="_blank" class="home__social-link">
-                     <i class="ri-linkedin-box-line"></i>
-                  </a>
-
-                  <a href="https://github.com/Bryanh002" target="_blank" class="home__social-link">
-                     <i class="ri-github-line"></i>
-                  </a>
-                  <!--
-                  <a href="https://about.gitlab.com/" target="_blank" class="home__social-link">
-                     <i class="ri-gitlab-line"></i>
-                  </a>-->
-               </div>
-
-               <a href="assets/pdf/Bryan_Heddle_Resume.pdf" download target="_blank" class="home__cv">
-                  RESUME <i class="ri-file-list-2-line"></i>
-               </a>
+            <div>
+              <dt>GPA</dt>
+              <dd>3.7</dd>
             </div>
-         </section>
-
-         <!--==================== ABOUT ====================-->
-         <section class="about section" id="about">
-            <div class="about__shadow"></div>
-
-            <div class="about__container container grid">
-               <div class="about__data">
-                  <h2 class="section__title">
-                     <span>Engineering</span> 
-                     <br> Is My Passion
-                  </h2>
-
-                  <p class="about__description">
-                     With a background in <b>mechatronics and AI systems</b>, I’m drawn to challenges that 
-                     blend code, hardware, and creativity. My process is driven by exploration, 
-                     rapid iteration, and a love for crafting purposeful tech.
-                  </p>
-
-                  <a href="assets/pdf/Bryan_Heddle_Resume.pdf" download class="button">
-                     Resume <i class="ri-file-list-2-line"></i>
-                  </a>
-               </div>
-
-               <div class="about__image">
-                  <div class="blob-animate" style="margin-top: 50px"></div>
-                  <div class="blob-animate"></div>
-                  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
-                  <dotlottie-wc src="https://lottie.host/c964d306-44ab-44ea-9cc0-b49f09551b02/teOSgVwTh9.lottie" speed="0.5" autoplay loop alt="image" class="about__perfil"></dotlottie-wc>
-                  <!--<img src="assets/img/about-perfil.png" alt="image" class="about__perfil">!-->
-               </div>
+            <div>
+              <dt>Based in</dt>
+              <dd>Hamilton, ON</dd>
             </div>
-         </section>
+          </dl>
+        </div>
+      </section>
 
-         <!--==================== PROJECTS ====================-->
-         <section class="projects section" id="projects">
-            <h2 class="section__title">
-               I Love Working On<br>
-               <span>Projects</span>
-            </h2>
+      <section class="section" id="projects">
+        <div class="section__head">
+          <p class="section__kicker">Selected and otherwise</p>
+          <h2 class="section__title">Projects</h2>
+        </div>
 
-            <div class="projects__container container grid">
-               <div class="projects__swiper swiper">
-                  <div class="swiper-wrapper">
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-                        
-                        <div class="projects__number">
-                           <h1>01</h1>
-                           <h3>Robotics & AI</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title">Dynamic <br> Humanoid Robot</h1>
-                           <p class="projects__subtitle">Technologies used</p>
-                           <p class="projects__description">SolidWorks, Altium, Python, ROS2, XML, Gazebo, Pytorch</p>
-                        </div>
-   
-                        <div class="projects__image">
-                           <img src="assets/img/projects-1.png" alt="image" class="projects__img">
-                           <a href="https://github.com/Bryanh002/AI-Robot" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>
-   
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-   
-                        <div class="projects__number">
-                           <h1>02</h1>
-                           <h3>Machine Learning</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title">Credit Card Fraud <br> Detection Model</h1>
-                           <p class="projects__subtitle">Technologies used</p>
-                           <p class="projects__description">Jupyter, Python, SciKit, TensorFlow, PyTorch, XGBoost.</p>
-                        </div>
-   
-                        <div class="projects__image">
-                           <img src="assets/img/neural-network.jpeg" alt="image" class="projects__img">
-                           <a href="https://github.com/Bryanh002/Group11-DS3000-Project" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>
-   
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-   
-                        <div class="projects__number">
-                           <h1>03</h1>
-                           <h3>Computer Vision</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title">YOLO V3 <br> Implementation</h1>
-                           <p class="projects__subtitle">Technologies used</p>
-                           <p class="projects__description">Pytorch, torchvision.</p>
-                        </div>
-   
-                        <div class="projects__image">
-                           <img src="assets/img/Yolov3.jpeg" alt="image" class="projects__img">
-                           <a href="https://github.com/Bryanh002/YOLOV3-Project" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>
-   
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-   
-                        <div class="projects__number">
-                           <h1>04</h1>
-                           <h3>Robotics</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title"> IOT Servo <br> Robotic Arm </h1>
-                           <p class="projects__subtitle">Technologies used</p>
-                           <p class="projects__description">Arduino, C#, C++</p>
-                        </div>
-   
-                        <div class="projects__image">
-                           <img src="assets/img/Robotic-Arm.png" alt="image" class="projects__img">
-                           <a href="https://github.com/Bryanh002/Robotic-arm" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>
-                     <!--
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-
-                        <div class="projects__number">
-                           <h1>05</h1>
-                           <h3>Full-Stack</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title">Financial Management <br> Website</h1>
-                           <p class="projects__subtitle">Technologies used</p>
-                           <p class="projects__description">HTML, CSS, JavaScript, Gsap, Swiper Js and Figma.</p>
-                        </div>
-   
-                        <div class="projects__image">
-                           <img src="assets/img/projects-5.png" alt="image" class="projects__img">
-                           <a href="#" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>-->
-                  </div>
-   
-                  <div class="swiper-pagination"></div>
-               </div>
+        <div class="projects">
+          <article class="project project--featured">
+            <div class="project__media project__media--ergos">
+              <div class="rover-viewer" id="ergos-viewer" data-loading="Loading ERGOS">
+                <img id="ergos-orbit" src="assets/img/ergos-orbit/Frame000001.webp" alt="ERGOS humanoid CAD, drag to rotate" draggable="false" width="600" height="480">
+                <span class="rover-viewer-hint">Drag to rotate</span>
+              </div>
             </div>
-         </section>
-
-         <!--==================== WORK ====================-->
-         <section class="work section">
-            <h2 class="section__title">
-               <span>My Work</span> 
-               <br> Experience
-            </h2>
-
-            <div class="work__container container grid">
-               <div class="work__tabs">
-                  <!-- Button Experience -->
-                  <button class="work__button work-active" data-target="#experience">
-                     Experience <i class="ri-briefcase-3-line"></i>
-                  </button>
-
-                  <!-- Button Education -->
-                  <button class="work__button" data-target="#education">
-                     Education <i class="ri-graduation-cap-line"></i>
-                  </button>
-               </div>
-
-               <div class="work__area">
-                  <div class="work__line"></div>
-                  
-                  <!-- Content Experience -->
-                  <div class="work__content work-active" data-content id="experience">
-                     <div class="work__card">
-                        <div class="work__data">
-                           <div>
-                              <h1 class="work__title">AI <br> Developer</h1>
-                              <h3 class="work__subtitle">Outlier AI</h3>
-                           </div>
-
-                           <h2 class="work__year">2024 <br> 2025</h2>
-                        </div>
-
-                        <p class="work__description">
-                           AI engineer that applied reinforcement learning techniques to LLM's. 
-                           Developed training pipelines to enhance performance and accuracy.
-                        </p>
-                     </div>
-
-                     <div class="work__card">
-                        <div class="work__data">
-                           <div>
-                              <h1 class="work__title">Embedded <br> Developer</h1>
-                              <h3 class="work__subtitle">Geotab</h3>
-                           </div>
-
-                           <h2 class="work__year">2025 <br> 2026</h2>
-                        </div>
-
-                        <p class="work__description">
-                           Embedded developer responsible for designing and optimizing firmware systems, implementing CI/CD pipelines, 
-                           and developing hardware testing and validation rigs for production environments.
-                        </p>
-                     </div>
-
-                     <div class="work__card">
-                        <div class="work__data">
-                           <div>
-                              <h1 class="work__title">Robotics & AI <br> Engineer</h1>
-                              <h3 class="work__subtitle">TBD</h3>
-                           </div>
-
-                           <h2 class="work__year">Next</h2>
-                        </div>
-
-                        <p class="work__description">
-                           Aspiring to engineer next-generation humanoid robots that integrate advanced AI systems.
-                        </p>
-                     </div>
-                  </div>
-
-                  <!-- Content Education -->
-                  <div class="work__content" data-content id="education">
-                     <div class="work__card">
-                        <div class="work__data">
-                           <div>
-                              <h1 class="work__title">Started Engineering<br> Undergraduate</h1>
-                              <h3 class="work__subtitle">University <br> of Western Ontario</h3>
-                           </div>
-
-                           <h2 class="work__year">2022</h2>
-                        </div>
-
-                        <p class="work__description">
-                           Began studies in Mechatronics and Artificial Intelligence Systems Engineering.
-                        </p>
-                     </div>
-
-                     <div class="work__card">
-                        <div class="work__data">
-                           <div>
-                              <h1 class="work__title">Graduate <br> with B.E.</h1>
-                              <h3 class="work__subtitle">University</h3>
-                           </div>
-
-                           <h2 class="work__year">2028</h2>
-                        </div>
-
-                        <p class="work__description">
-                           Graduating with a Bachelor’s in Mechatronics and AI Systems Engineering.
-                        </p>
-                     </div>
-                  </div>
-               </div>
+            <div class="project__body">
+              <p class="project__meta">Robotics · May 2025 - Present</p>
+              <h3 class="project__title">ERGOS</h3>
+              <p class="project__desc">
+                Building a 20-DOF humanoid platform with the goal of dynamic movement on serial actuators.
+                I did the full stack: mechanical design, custom PCB, and embedded control.
+                Isaac Sim and ROS 2 for training and deploying locomotion policies. Raised $5,000+ CAD in sponsorships.
+              </p>
+              <p class="project__stack">SolidWorks · Altium · Python · C++ · ROS 2 · Isaac Sim</p>
+              <a class="project__link" href="https://github.com/Bryanh002/ERGOS-Dynamic-Humanoid-Platform" target="_blank" rel="noopener">
+                GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+              </a>
             </div>
-         </section>
+          </article>
 
-         <!--==================== SERVICES ====================-->
-         <section class="services section">
-            <h2 class="section__title">What I <span>Offer</span></h2>
-
-            <div class="services__container container grid">
-               <!-- Services Developer -->
-               <div class="services__card services-open">
-                  <div class="blob"></div>
-
-                  <div class="services__data">
-                     <h2 class="services__title">Mechatronics</h2>
-                     <p class="services__description">
-                        Mechanical design, Electrical design, and Software development skills all packed together.
-                     </p>
-                  </div>
-
-                  <div class="services__info">
-                     <h3 class="services__subtitle">Skills & Tools</h3>
-
-                     <ul class="services__skills">
-                        <li class="services__skill">SolidWorks</li>
-                        <li class="services__skill">FEA</li>
-                        <li class="services__skill">Altium</li>
-                        <li class="services__skill">PCB-Routing</li>
-                        <li class="services__skill">Python</li>
-                        <li class="services__skill">C/C++</li>
-                        <li class="services__skill">Arduino</li>
-                        <li class="services__skill">Bash</li>
-                        <li class="services__skill">XML</li>
-                        <li class="services__skill">ROS2</li>
-                        <li class="services__skill">Docker</li>
-                        <li class="services__skill">Jupyter</li>
-                        <li class="services__skill">GitHub</li>
-                        <li class="services__skill">GitLab</li>
-                     </ul>
-                  </div>
-
-                  <button class="services__button">
-                     <i class="ri-arrow-down-s-line"></i>
-                  </button>
-               </div>
-
-               <!-- Services Design -->
-               <div class="services__card services-close">
-                  <div class="blob blob-2"></div>
-
-                  <div class="services__data">
-                     <h2 class="services__title">AI</h2>
-                     <p class="services__description">
-                        AI skills learnt through work experience, university courses, and projects.
-                     </p>
-                  </div>
-
-                  <div class="services__info">
-                     <h3 class="services__subtitle">Skills & Tools</h3>
-
-                     <ul class="services__skills">
-                        <li class="services__skill">Machine Learning</li>
-                        <li class="services__skill">Panda</li>
-                        <li class="services__skill">Numpy</li>
-                        <li class="services__skill">Deep Learning</li>
-                        <li class="services__skill">SCIKit</li>
-                        <li class="services__skill">Tensorflow</li>
-                        <li class="services__skill">PyTorch</li>
-                        <li class="services__skill">Keras</li>
-                        <li class="services__skill">Hugging Face</li>
-                        <li class="services__skill">Open CV</li>
-                     </ul>
-                  </div>
-
-                  <button class="services__button">
-                     <i class="ri-arrow-down-s-line"></i>
-                  </button>
-               </div>
+          <article class="project project--featured">
+            <div class="project__media project__media--cad">
+              <div class="rover-viewer" id="rover-viewer" data-loading="Loading CAD view">
+                <img id="rover-orbit" src="assets/img/rover-orbit/Frame000006.webp" alt="WE MARS rover CAD I designed, drag to rotate" draggable="false" width="600" height="480">
+                <span class="rover-viewer-hint">Drag to rotate</span>
+              </div>
             </div>
-         </section>
-
-         <!--==================== TESTIMONIALS 
-         <section class="testimonials section">
-            <h2 class="section__title">
-               <span>What They Say</span> 
-               <br> About Me
-            </h2>
-
-            <div class="testimonials__container container grid">
-               <div class="testimonials__content">
-                  <article class="testimonials__card">
-                     <div class="blob"></div>
-
-                     <div class="testimonials__data">
-                        <img src="assets/img/testimonial-1.png" alt="image" class="testimonials__img">
-   
-                        <h2 class="testimonials__name">Abex Wrooks</h2>
-   
-                        <div class="testimonials__rating">
-                           <div class="testimonials__stars">
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                           </div>
-   
-                           <h3 class="testimonials__number">5.0</h3>
-                        </div>
-   
-                        <p>
-                           The company offers many easy-to-use services, 
-                           with hard work and round-the-clock support on 
-                           all projects.
-                        </p>
-                     </div>
-                  </article>
-
-                  <article class="testimonials__card">
-                     <div class="blob"></div>
-
-                     <div class="testimonials__data">
-                        <img src="assets/img/testimonial-2.png" alt="image" class="testimonials__img">
-   
-                        <h2 class="testimonials__name">Willer Morth</h2>
-   
-                        <div class="testimonials__rating">
-                           <div class="testimonials__stars">
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                           </div>
-   
-                           <h3 class="testimonials__number">5.0</h3>
-                        </div>
-   
-                        <p>
-                           The company offers many easy-to-use services, 
-                           with hard work and round-the-clock support on 
-                           all projects.
-                        </p>
-                     </div>
-                  </article>
-
-                  <article class="testimonials__card">
-                     <div class="blob"></div>
-
-                     <div class="testimonials__data">
-                        <img src="assets/img/testimonial-3.png" alt="image" class="testimonials__img">
-   
-                        <h2 class="testimonials__name">Llemi Llorens</h2>
-   
-                        <div class="testimonials__rating">
-                           <div class="testimonials__stars">
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                           </div>
-   
-                           <h3 class="testimonials__number">5.0</h3>
-                        </div>
-   
-                        <p>
-                           The company offers many easy-to-use services, 
-                           with hard work and round-the-clock support on 
-                           all projects.
-                        </p>
-                     </div>
-                  </article>
-
-                  <article class="testimonials__card">
-                     <div class="blob"></div>
-
-                     <div class="testimonials__data">
-                        <img src="assets/img/testimonial-4.png" alt="image" class="testimonials__img">
-   
-                        <h2 class="testimonials__name">Jems Guiller</h2>
-   
-                        <div class="testimonials__rating">
-                           <div class="testimonials__stars">
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                           </div>
-   
-                           <h3 class="testimonials__number">5.0</h3>
-                        </div>
-   
-                        <p>
-                           The company offers many easy-to-use services, 
-                           with hard work and round-the-clock support on 
-                           all projects.
-                        </p>
-                     </div>
-                  </article>
-               </div>
-
-               <div class="testimonials__content testimonials__reverse">
-                  <article class="testimonials__card">
-                     <div class="blob"></div>
-
-                     <div class="testimonials__data">
-                        <img src="assets/img/testimonial-1.png" alt="image" class="testimonials__img">
-   
-                        <h2 class="testimonials__name">Abex Wrooks</h2>
-   
-                        <div class="testimonials__rating">
-                           <div class="testimonials__stars">
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                           </div>
-   
-                           <h3 class="testimonials__number">5.0</h3>
-                        </div>
-   
-                        <p>
-                           The company offers many easy-to-use services, 
-                           with hard work and round-the-clock support on 
-                           all projects.
-                        </p>
-                     </div>
-                  </article>
-
-                  <article class="testimonials__card">
-                     <div class="blob"></div>
-
-                     <div class="testimonials__data">
-                        <img src="assets/img/testimonial-2.png" alt="image" class="testimonials__img">
-   
-                        <h2 class="testimonials__name">Willer Morth</h2>
-   
-                        <div class="testimonials__rating">
-                           <div class="testimonials__stars">
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                           </div>
-   
-                           <h3 class="testimonials__number">5.0</h3>
-                        </div>
-   
-                        <p>
-                           The company offers many easy-to-use services, 
-                           with hard work and round-the-clock support on 
-                           all projects.
-                        </p>
-                     </div>
-                  </article>
-
-                  <article class="testimonials__card">
-                     <div class="blob"></div>
-
-                     <div class="testimonials__data">
-                        <img src="assets/img/testimonial-3.png" alt="image" class="testimonials__img">
-   
-                        <h2 class="testimonials__name">Llemi Llorens</h2>
-   
-                        <div class="testimonials__rating">
-                           <div class="testimonials__stars">
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                           </div>
-   
-                           <h3 class="testimonials__number">5.0</h3>
-                        </div>
-   
-                        <p>
-                           The company offers many easy-to-use services, 
-                           with hard work and round-the-clock support on 
-                           all projects.
-                        </p>
-                     </div>
-                  </article>
-
-                  <article class="testimonials__card">
-                     <div class="blob"></div>
-
-                     <div class="testimonials__data">
-                        <img src="assets/img/testimonial-4.png" alt="image" class="testimonials__img">
-   
-                        <h2 class="testimonials__name">Jems Guiller</h2>
-   
-                        <div class="testimonials__rating">
-                           <div class="testimonials__stars">
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                              <i class="ri-star-line"></i>
-                           </div>
-   
-                           <h3 class="testimonials__number">5.0</h3>
-                        </div>
-   
-                        <p>
-                           The company offers many easy-to-use services, 
-                           with hard work and round-the-clock support on 
-                           all projects.
-                        </p>
-                     </div>
-                  </article>
-               </div>
+            <div class="project__body">
+              <p class="project__meta">Mechanical · CAD · Sep 2023 - Present</p>
+              <h3 class="project__title">WE MARS rover CAD</h3>
+              <p class="project__desc">
+                I designed the third-generation WE MARS rover in a month: chassis, drivetrain, wheels, and swivel.
+                The machine is 22&nbsp;kg, almost 8&nbsp;kg lighter than last year. New swivel control and higher-reduction wheel gearboxes, built for CIRC off-road: less current draw, more power at the ground.
+              </p>
+              <p class="project__stack">SolidWorks · FEA · swerve / chassis</p>
+              <a class="project__link" href="https://wemars.org/#rover" target="_blank" rel="noopener">
+                Check out WEMARS <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+              </a>
             </div>
-         </section> ====================-->
-          
-         <!--==================== CONTACT ====================-->
-         <section class="contact section" id="contact">
-            <div class="contact__container container grid">
-               <div class="contact__data">
-                  <h2 class="section__title">Contact Me</h2>
+          </article>
 
-                  <p class="contact__description"></p>
-
-                  <button class="contact__button button" id="contact-btn">
-                     Copy email <i class="ri-file-copy-line"></i>
-                     <!-- Enter your email -->
-                     <span class="contact__email" id="contact-email">heddlebryan0@email.com</span>
-                  </button>
-               </div>
-
-               <div class="contact__content grid">
-                  <div class="contact__info grid">
-                     <div>
-                        <h3 class="contact__title">Email</h3>
-                        <address class="contact__address">heddlebryan0@email.com</address>
-                     </div>
-   
-                     <div>
-                        <h3 class="contact__title">Location</h3>
-                        <address class="contact__address">ON, Canada</address>
-                     </div>
-                  </div>
-
-                  <div class="contact__social">
-                     <h3 class="contact__title">Social Media</h3>
-   
-                     <div class="contact__links">
-                        <a href="https://www.linkedin.com/in/bryan-heddle-4a55361ba/" target="_blank" class="contact__link">
-                           Linkedin
-                           <i class="ri-arrow-right-up-long-line"></i>
-                        </a>
-   
-                        <a href="https://github.com/Bryanh002" target="_blank" class="contact__link">
-                           GitHub
-                           <i class="ri-arrow-right-up-long-line"></i>
-                        </a>
-                     </div>
-                  </div>
-                  <div class="contact__write">
-                     <h3 class="contact__title">Write Me & We'll Talk</h3>
-   
-                     <div class="contact__links">
-                        <a href="https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!" target="_blank" class="contact__link">
-                           WhatsApp
-                           <i class="ri-arrow-right-up-long-line"></i>
-                        </a>
-
-                        <a href="https://www.instagram.com/bryanheddle/" target="_blank" class="contact__link">
-                           Instagram
-                           <i class="ri-arrow-right-up-long-line"></i>
-                        </a>
-                     </div>
-                  </div>
-               </div>
+          <article class="project">
+            <div class="project__media project__media--webrtc">
+              <img src="assets/img/webrtc-frontend.png" alt="WE MARS System Monitor WebRTC frontend with six camera tiles" width="1024" height="490">
             </div>
-         </section>
-      </main>
+            <div class="project__body">
+              <p class="project__meta">Software · WE MARS</p>
+              <h3 class="project__title">Rover WebRTC stack</h3>
+              <p class="project__desc">
+                Factory-based C++ libwebrtc pipeline to a React frontend, replacing a Python stream
+                and cutting video latency 85% for remote driving.
+              </p>
+              <p class="project__stack">C++ · libwebrtc · GStreamer · React</p>
+              <a class="project__link" href="https://github.com/WEMARS-Rover/WEMARS_WebRTC" target="_blank" rel="noopener">
+                GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
-      <!--==================== FOOTER ====================-->
-      <footer class="footer grid">
-         <div class="blob-animate"></div>
-         
-         <div class="footer__copy">
-            All Rights Reserved By <span>Bryan Heddle</span>
-         </div>
+          <article class="project">
+            <div class="project__media project__media--servo">
+              <img src="assets/img/servosim-servo.png" alt="FEETECH STS3250 bus servo used in ServoSim" width="293" height="339">
+            </div>
+            <div class="project__body">
+              <p class="project__meta">Sim-to-real · May 2026 - Present · NVIDIA Academic Grant</p>
+              <h3 class="project__title">ServoSim</h3>
+              <p class="project__desc">
+                Isaac Lab extension with learned servo models and domain randomization, transferring RL policies onto ERGOS without torque sensing.
+                NVIDIA Academic Hardware Grant with PI Dr. Elvis Chen: RTX PRO 6000 Max-Q and Jetson AGX Orin (~$15K).
+              </p>
+              <p class="project__stack">Isaac Lab · PyTorch · Python · Jetson · Domain randomization</p>
+              <a class="project__link" href="https://github.com/Bryanh002/ServoSim" target="_blank" rel="noopener">
+                GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
-         <div class="footer__year">
-            &#169; <span id="footer-year"></span>
-         </div>
-      </footer>
-      
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src="assets/js/scrollreveal.min.js"></script>
+          <article class="project">
+            <div class="project__media project__media--cover">
+              <img src="assets/img/Yolov3.jpeg" alt="YOLOv3 object detection visualization" width="640" height="400">
+            </div>
+            <div class="project__body">
+              <p class="project__meta">Computer vision · 2024</p>
+              <h3 class="project__title">YOLOv3 re-implementation</h3>
+              <p class="project__desc">
+                From-scratch YOLOv3 object detector in PyTorch. Tuned anchors and loss, reaching 51.2% mAP on validation.
+              </p>
+              <p class="project__stack">PyTorch · OpenCV · torchvision</p>
+              <a class="project__link" href="https://github.com/Bryanh002/YOLOV3-Project" target="_blank" rel="noopener">
+                GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
-      <!--=============== ANIME JS ===============-->
-      <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+          <article class="project">
+            <div class="project__media project__media--cover">
+              <img src="assets/img/Robotic-Arm.png" alt="IoT servo robotic arm" width="640" height="400">
+            </div>
+            <div class="project__body">
+              <p class="project__meta">Robotics · hardware</p>
+              <h3 class="project__title">IoT servo robotic arm</h3>
+              <p class="project__desc">
+                Multi-axis servo arm with microcontroller control and a host-side interface for remote actuation.
+              </p>
+              <p class="project__stack">Arduino · C++ · C#</p>
+              <a class="project__link" href="https://github.com/Bryanh002/Robotic-arm" target="_blank" rel="noopener">
+                GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
-      <!--=============== SWIPER JS ===============-->
-      <script src="assets/js/swiper-bundle.min.js"></script>
+          <article class="project">
+            <div class="project__media project__media--cover">
+              <img src="assets/img/neural-network.jpeg" alt="Neural network diagram" width="640" height="400">
+            </div>
+            <div class="project__body">
+              <p class="project__meta">Machine learning · 2024</p>
+              <h3 class="project__title">Credit card fraud detection</h3>
+              <p class="project__desc">
+                Benchmarked logistic regression, random forests, XGBoost, and neural nets. 94% accuracy, 83% precision after cross-validated tuning.
+              </p>
+              <p class="project__stack">Python · scikit-learn · TensorFlow · PyTorch · XGBoost</p>
+              <a class="project__link" href="https://github.com/Bryanh002/Group11-DS3000-Project" target="_blank" rel="noopener">
+                GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
+          <article class="project">
+            <div class="project__media project__media--cover">
+              <img src="assets/img/projects-5.png" alt="Financial management website interface" width="640" height="400">
+            </div>
+            <div class="project__body">
+              <p class="project__meta">Full-stack</p>
+              <h3 class="project__title">Financial management website</h3>
+              <p class="project__desc">
+                Personal finance web app for tracking and visualizing spending, designed in Figma and built as a front-end product.
+              </p>
+              <p class="project__stack">HTML · CSS · JavaScript · GSAP · Figma</p>
+              <a class="project__link" href="https://github.com/Bryanh002/Financial-Management-Website" target="_blank" rel="noopener">
+                GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
 
-      <script>
-         window.addEventListener("DOMContentLoaded", () => {
-            const lottie = document.querySelector(".about__perfil");
+      <section class="section" id="experience">
+        <div class="section__head section__head--split">
+          <div>
+            <p class="section__kicker">Work and teams</p>
+            <h2 class="section__title">Experience</h2>
+          </div>
+          <a class="btn btn--ghost" href="assets/pdf/Bryan_Heddle_Resume.pdf" target="_blank" rel="noopener">
+            Resume <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+          </a>
+        </div>
 
-            function resizeLottie() {
-               if (!lottie) return;
+        <ol class="timeline">
+          <li class="timeline__item">
+            <p class="timeline__dates">May 2026 - Aug 2026</p>
+            <div class="timeline__content">
+              <h3 class="timeline__role">Computer Vision Researcher</h3>
+              <p class="timeline__org">VIP Lab, University of Waterloo</p>
+            </div>
+          </li>
 
-               // Calculate responsive size
-               const w = Math.min(window.innerWidth * 0.9, 650);
+          <li class="timeline__item">
+            <p class="timeline__dates">May 2025 - May 2026</p>
+            <div class="timeline__content">
+              <h3 class="timeline__role">Embedded Developer Intern</h3>
+              <p class="timeline__org">Geotab</p>
+            </div>
+          </li>
 
-               // Set both CSS and intrinsic size
-               lottie.style.width = `${w}px`;
-               lottie.style.height = `${w}px`;
+          <li class="timeline__item">
+            <p class="timeline__dates">Sep 2024 - May 2025</p>
+            <div class="timeline__content">
+              <h3 class="timeline__role">Machine Learning Engineer</h3>
+              <p class="timeline__org">Outlier AI</p>
+            </div>
+          </li>
 
-               // These attributes ensure the canvas re-rasterizes at the right resolution
-               lottie.setAttribute("width", w);
-               lottie.setAttribute("height", w);
-            }
+          <li class="timeline__item">
+            <p class="timeline__dates">Sep 2023 - Present</p>
+            <div class="timeline__content">
+              <h3 class="timeline__role">President &amp; Lead Software Engineer</h3>
+              <p class="timeline__org">Western Engineering Mars Rover Team</p>
+            </div>
+          </li>
+        </ol>
+      </section>
 
-            // Wait for the web component to upgrade & render
-            customElements.whenDefined("dotlottie-wc").then(() => {
-               resizeLottie();
-               window.addEventListener("resize", resizeLottie);
-            });
-         });
-      </script>
+      <section class="section" id="skills">
+        <div class="section__head">
+          <p class="section__kicker">Tools I actually use</p>
+          <h2 class="section__title">Skills</h2>
+        </div>
 
-   </body>
+        <div class="skills">
+          <div class="skills__group">
+            <h3>Languages</h3>
+            <ul>
+              <li>C</li>
+              <li>C++</li>
+              <li>Python</li>
+              <li>C#</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>SQL</li>
+              <li>Bash</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3>Embedded &amp; robotics</h3>
+            <ul>
+              <li>ROS 2</li>
+              <li>Linux</li>
+              <li>Arduino</li>
+              <li>CAN</li>
+              <li>Docker</li>
+              <li>gRPC</li>
+              <li>Jetson</li>
+              <li>Altium</li>
+              <li>SolidWorks</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3>AI &amp; vision</h3>
+            <ul>
+              <li>PyTorch</li>
+              <li>Isaac Lab / Sim</li>
+              <li>OpenCV</li>
+              <li>3D Gaussian Splatting</li>
+              <li>TensorFlow</li>
+              <li>scikit-learn</li>
+              <li>Hugging Face</li>
+              <li>RAG / RLHF</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="section__head">
+          <p class="section__kicker">Say hello</p>
+          <h2 class="section__title">Contact</h2>
+        </div>
+
+        <p class="contact__lede">Open to internships and research that live close to hardware.</p>
+
+        <button class="btn btn--primary" id="contact-btn" type="button">
+          Copy email <i class="ri-file-copy-line" aria-hidden="true"></i>
+          <span class="sr-only" id="contact-email">heddlebryan0@gmail.com</span>
+        </button>
+
+        <address class="contact__details">
+          <a href="mailto:heddlebryan0@gmail.com">heddlebryan0@gmail.com</a>
+          <span>Hamilton, Ontario</span>
+        </address>
+
+        <div class="contact__links">
+          <a href="https://www.linkedin.com/in/bryan-heddle-4a55361ba/" target="_blank" rel="noopener">
+            LinkedIn <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/Bryanh002" target="_blank" rel="noopener">
+            GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <a class="guide" id="guide" href="#projects">
+      <span class="guide__kicker" id="guide-kicker">Next</span>
+      <span class="guide__target" id="guide-target">Projects</span>
+      <i class="ri-arrow-down-line" aria-hidden="true"></i>
+    </a>
+
+    <footer class="footer">
+      <p>© <span id="footer-year"></span> Bryan Heddle</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
