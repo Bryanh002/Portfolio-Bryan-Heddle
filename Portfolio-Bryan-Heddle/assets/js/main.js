@@ -123,13 +123,15 @@ copyBtn.addEventListener('click', async () => {
   reset()
 })
 
-const initOrbitViewer = ({ viewerId, imgId, cols, rows, frameBase, frameExt, col = 0, row = 0 }) => {
+const initOrbitViewer = ({ viewerId, imgId, cols, rows, frameBase, frameExt, col = 0, row = 0, maxRow }) => {
   const viewer = document.getElementById(viewerId)
   const img = document.getElementById(imgId)
   if (!viewer || !img) return
 
   const COLS = cols
   const ROWS = rows
+  const MIN_ROW = 0
+  const MAX_ROW = maxRow == null ? ROWS - 1 : Math.min(maxRow, ROWS - 1)
   const pixelsPerCol = 16
   const pixelsPerRow = 32
   const PRELOAD_BATCH = 32
@@ -144,7 +146,7 @@ const initOrbitViewer = ({ viewerId, imgId, cols, rows, frameBase, frameExt, col
   const frameCache = new Map()
 
   const framePath = (rowIndex, colIndex) => {
-    const r = Math.min(Math.max(rowIndex, 0), ROWS - 1)
+    const r = Math.min(Math.max(rowIndex, MIN_ROW), MAX_ROW)
     const c = ((colIndex % COLS) + COLS) % COLS
     const frameNumber = r * COLS + c + 1
     return `${frameBase}${String(frameNumber).padStart(6, '0')}${frameExt}`
@@ -217,7 +219,7 @@ const initOrbitViewer = ({ viewerId, imgId, cols, rows, frameBase, frameExt, col
 
     while (Math.abs(dragY) >= pixelsPerRow) {
       const direction = dragY > 0 ? 1 : -1
-      if ((direction > 0 && nextRow >= ROWS - 1) || (direction < 0 && nextRow <= 0)) {
+      if ((direction > 0 && nextRow >= MAX_ROW) || (direction < 0 && nextRow <= MIN_ROW)) {
         dragY = 0
         break
       }
@@ -227,7 +229,7 @@ const initOrbitViewer = ({ viewerId, imgId, cols, rows, frameBase, frameExt, col
 
     if (nextCol === col && nextRow === row) return
     col = ((nextCol % COLS) + COLS) % COLS
-    row = Math.min(Math.max(nextRow, 0), ROWS - 1)
+    row = Math.min(Math.max(nextRow, MIN_ROW), MAX_ROW)
     queueRender()
   }
 
@@ -280,7 +282,7 @@ const initOrbitViewer = ({ viewerId, imgId, cols, rows, frameBase, frameExt, col
     renderFrame()
     viewer.classList.remove('is-loading')
     const allPaths = []
-    for (let r = 0; r < ROWS; r += 1) {
+    for (let r = MIN_ROW; r <= MAX_ROW; r += 1) {
       for (let c = 0; c < COLS; c += 1) allPaths.push(framePath(r, c))
     }
     preloadFrames(allPaths)
@@ -291,20 +293,22 @@ initOrbitViewer({
   viewerId: 'ergos-viewer',
   imgId: 'ergos-orbit',
   cols: 30,
-  rows: 10,
+  rows: 12,
   frameBase: 'assets/img/ergos-orbit/Frame',
   frameExt: '.webp',
   col: 0,
   row: 0,
+  maxRow: 6,
 })
 
 initOrbitViewer({
   viewerId: 'rover-viewer',
   imgId: 'rover-orbit',
-  cols: 36,
+  cols: 30,
   rows: 12,
   frameBase: 'assets/img/rover-orbit/Frame',
   frameExt: '.webp',
-  col: 5,
-  row: 0,
+  col: 4,
+  row: 1,
+  maxRow: 6,
 })

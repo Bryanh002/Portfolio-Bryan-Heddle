@@ -380,7 +380,7 @@ h3 {
   opacity: 0;
   pointer-events: none;
   z-index: 3;
-  animation: hero-scan 1.55s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+  animation: hero-scan 2.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
 }
 
 @keyframes hero-copy {
@@ -560,9 +560,19 @@ h3 {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
 }
 
+.project:not(.project--featured) {
+  grid-template-rows: 220px 1fr;
+}
+
 .project__media {
   background: #000;
   min-height: 180px;
+}
+
+.project:not(.project--featured) .project__media {
+  min-height: 0;
+  height: 220px;
+  overflow: hidden;
 }
 
 .project__media img {
@@ -573,9 +583,19 @@ h3 {
   margin: 0 auto;
 }
 
+.project:not(.project--featured) .project__media img {
+  max-height: none;
+  object-fit: cover;
+  margin: 0;
+}
+
 .project__media--cover img {
   object-fit: cover;
   max-height: 220px;
+}
+
+.project:not(.project--featured) .project__media--cover img {
+  max-height: none;
 }
 
 .project__media--webrtc {
@@ -583,18 +603,17 @@ h3 {
 }
 
 .project__media--webrtc img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: top center;
-  max-height: 240px;
 }
 
 .project__media--ergos {
-  background: #f4f5f7;
+  background: #a0a6aa;
   padding: 0;
 }
 
 .project__media--ergos .rover-viewer {
-  background: #f4f5f7;
+  background: #a0a6aa;
   aspect-ratio: 5 / 4;
 }
 
@@ -610,10 +629,12 @@ h3 {
   box-shadow: inset 0 0 28px 10px #efece6;
 }
 
-.project__media--servo img {
+.project__media--servo img,
+.project:not(.project--featured) .project__media--servo img {
   object-fit: contain;
   max-height: 176px;
   width: auto;
+  height: auto;
 }
 
 .project__media--rover {
