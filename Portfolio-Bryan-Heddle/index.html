@@ -38,7 +38,7 @@
             <li><a class="nav__link" href="#experience">Experience</a></li>
             <li><a class="nav__link" href="#contact">Contact</a></li>
           </ul>
-          <a class="nav__resume" href="assets/pdf/Bryan_Heddle_Resume.pdf?v=20260906b" target="_blank" rel="noopener">Resume</a>
+          <a class="nav__resume" href="assets/pdf/Bryan_Heddle_Resume.pdf?v=20260912b" target="_blank" rel="noopener">Resume</a>
         </div>
       </nav>
     </header>
@@ -49,11 +49,11 @@
           <p class="hero__eyebrow">Mechatronics · AI Systems · Western</p>
           <h1 class="hero__title">Bryan Heddle</h1>
           <p class="hero__lede">
-            I love to build.
+            Engineering autonomy from the ground up.
           </p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#projects">See projects</a>
-            <a class="btn btn--ghost" href="assets/pdf/Bryan_Heddle_Resume.pdf?v=20260906b" target="_blank" rel="noopener">Resume</a>
+            <a class="btn btn--ghost" href="assets/pdf/Bryan_Heddle_Resume.pdf?v=20260912b" target="_blank" rel="noopener">Resume</a>
             <a class="btn btn--ghost" href="https://github.com/Bryanh002" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
@@ -70,9 +70,9 @@
       <section class="about" id="about">
         <div class="about__grid">
           <p class="about__text">
-            Fourth-year <b>Mechatronics with AI Systems Engineering</b> at the University of Western Ontario.
+            Fourth-year student in <b>Mechatronics with AI Systems Engineering</b> at the University of Western Ontario.
             I care about the full stack of a machine: mechanics, boards, firmware, and the models that run on it.
-            Currently building the <b>ERGOS</b> humanoid and leading Western’s Mars rover team.
+            Currently building <b>ERGOS</b>, a humanoid robot, and leading Western's Mars rover team.
             I love reaching outside my boundaries and pushing myself to learn more.
           </p>
           <dl class="about__facts">
@@ -129,16 +129,21 @@
               </div>
             </div>
             <div class="project__body">
-              <p class="project__meta">Mechanical · CAD · Sep 2023 - Present</p>
+              <p class="project__meta">Mechanical Design · 2026</p>
               <h3 class="project__title">WE MARS rover CAD</h3>
               <p class="project__desc">
                 I designed the third-generation WE MARS rover in a month: chassis, drivetrain, wheels, and swivel.
-                The machine is 22&nbsp;kg, almost 8&nbsp;kg lighter than last year. New swivel control and higher-reduction wheel gearboxes, built for CIRC off-road: less current draw, more power at the ground.
+                The rover is 22&nbsp;kg, almost 8&nbsp;kg lighter than last year. New swivel control and higher-reduction wheel gearboxes, built for CIRC off-road: less current draw, more power at the ground.
               </p>
               <p class="project__stack">SolidWorks · FEA · swerve / chassis</p>
-              <a class="project__link" href="https://wemars.org/#rover" target="_blank" rel="noopener">
-                Check out WEMARS <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
-              </a>
+              <div class="project__links">
+                <a class="project__link" href="https://github.com/WEMARS-Rover/Master-Assembly-2026" target="_blank" rel="noopener">
+                  GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+                </a>
+                <a class="project__link" href="https://wemars.org/#rover" target="_blank" rel="noopener">
+                  Check out WEMARS <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -147,11 +152,11 @@
               <img src="assets/img/webrtc-frontend.png" alt="WE MARS System Monitor WebRTC frontend with six camera tiles" width="1024" height="490">
             </div>
             <div class="project__body">
-              <p class="project__meta">Software · WE MARS</p>
+              <p class="project__meta">Software Design · 2026</p>
               <h3 class="project__title">Rover WebRTC stack</h3>
               <p class="project__desc">
                 Factory-based C++ libwebrtc pipeline to a React frontend, replacing a Python stream
-                and cutting video latency 85% for remote driving.
+                and cutting video latency from 240&nbsp;ms to 44&nbsp;ms for remote driving.
               </p>
               <p class="project__stack">C++ · libwebrtc · GStreamer · React</p>
               <a class="project__link" href="https://github.com/WEMARS-Rover/WEMARS_WebRTC" target="_blank" rel="noopener">
@@ -165,11 +170,11 @@
               <img src="assets/img/servosim-servo.png" alt="FEETECH STS3250 bus servo used in ServoSim" width="293" height="339">
             </div>
             <div class="project__body">
-              <p class="project__meta">Sim-to-real · May 2026 - Present · NVIDIA Academic Grant</p>
+              <p class="project__meta">Sim-to-real · 2026</p>
               <h3 class="project__title">ServoSim</h3>
               <p class="project__desc">
                 Building an Isaac Lab extension with actuator classes for position-controlled serial-bus servos, then comparing Isaac Lab baselines against my learned actuator nets on ERGOS.
-                NVIDIA Academic Grant of ~$15K in hardware: RTX PRO 6000 Max-Q and Jetson AGX Orin.
+                Received NVIDIA Academic Grant of ~$15K in hardware: RTX PRO 6000 Max-Q and Jetson AGX Orin.
               </p>
               <p class="project__stack">Isaac Lab · PyTorch · Python · Jetson · Domain randomization</p>
               <a class="project__link" href="https://github.com/Bryanh002/ServoSim" target="_blank" rel="noopener">
@@ -183,7 +188,7 @@
               <img src="assets/img/Yolov3.jpeg" alt="YOLOv3 object detection visualization" width="640" height="400">
             </div>
             <div class="project__body">
-              <p class="project__meta">Computer vision · 2024</p>
+              <p class="project__meta">Computer Vision · 2024</p>
               <h3 class="project__title">YOLOv3 re-implementation</h3>
               <p class="project__desc">
                 From-scratch YOLOv3 object detector in PyTorch. Tuned anchors and loss, reaching 51.2% mAP on validation.
@@ -200,7 +205,7 @@
               <img src="assets/img/Robotic-Arm.png" alt="IoT servo robotic arm" width="640" height="400">
             </div>
             <div class="project__body">
-              <p class="project__meta">Robotics · hardware</p>
+              <p class="project__meta">Robotics · 2023</p>
               <h3 class="project__title">IoT servo robotic arm</h3>
               <p class="project__desc">
                 Multi-axis servo arm with microcontroller control and a host-side interface for remote actuation.
@@ -217,7 +222,7 @@
               <img src="assets/img/neural-network.jpeg" alt="Neural network diagram" width="640" height="400">
             </div>
             <div class="project__body">
-              <p class="project__meta">Machine learning · 2024</p>
+              <p class="project__meta">Machine Learning · 2024</p>
               <h3 class="project__title">Credit card fraud detection</h3>
               <p class="project__desc">
                 Benchmarked logistic regression, random forests, XGBoost, and neural nets. 94% accuracy, 83% precision after cross-validated tuning.
@@ -234,7 +239,7 @@
               <img src="assets/img/projects-5.png" alt="Financial management website interface" width="640" height="400">
             </div>
             <div class="project__body">
-              <p class="project__meta">Full-stack</p>
+              <p class="project__meta">Full-stack · 2023</p>
               <h3 class="project__title">Financial management website</h3>
               <p class="project__desc">
                 Personal finance web app for tracking and visualizing spending, designed in Figma and built as a front-end product.
@@ -254,7 +259,7 @@
             <p class="section__kicker">Work and teams</p>
             <h2 class="section__title">Experience</h2>
           </div>
-          <a class="btn btn--ghost" href="assets/pdf/Bryan_Heddle_Resume.pdf?v=20260906b" target="_blank" rel="noopener">
+          <a class="btn btn--ghost" href="assets/pdf/Bryan_Heddle_Resume.pdf?v=20260912b" target="_blank" rel="noopener">
             Resume <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
           </a>
         </div>

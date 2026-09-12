@@ -799,6 +799,18 @@ h3 {
   gap: 0.25rem;
 }
 
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.25rem;
+  margin-top: 0.35rem;
+}
+
+.project__links .project__link {
+  margin-top: 0;
+}
+
 .project__link:hover {
   color: #c5ebe8;
 }
